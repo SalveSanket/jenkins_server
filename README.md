@@ -1,6 +1,6 @@
 # 🚀 Jenkins on AWS with Terraform and Automation Scripts
 
-Welcome to the **Jenkins AWS Automation Project**! This project provisions an EC2 instance on AWS using **Terraform** and sets up **Jenkins** automatically using a custom **Bash script**. It is designed to be beginner-friendly, modular, and practical for real-world DevOps learning.
+Welcome to the **Jenkins AWS Automation Project**! This project provisions an EC2 instance on AWS using **Terraform** and sets up **Jenkins** automatically using a custom **Bash script**.
 
 ---
 
