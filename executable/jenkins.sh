@@ -72,3 +72,4 @@ echo "📊 Checking Jenkins service status..."
 sudo systemctl status jenkins
 
 echo "✅ Jenkins installation complete! Access it via your EC2 public IP on port 8080."
+echo "🔗 URL: http://<your-ec2-public-ip>:8080"
