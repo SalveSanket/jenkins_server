@@ -25,7 +25,7 @@ if command -v yum &> /dev/null; then
   sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 elif command -v apt &> /dev/null; then
   echo "📥 Adding Jenkins repository for APT..."
-  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+    curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
     /usr/share/keyrings/jenkins-keyring.asc > /dev/null
   echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | \
     sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
