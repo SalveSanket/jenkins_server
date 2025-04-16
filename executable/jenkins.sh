@@ -25,10 +25,20 @@ if command -v yum &> /dev/null; then
   sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 elif command -v apt &> /dev/null; then
   echo "📥 Adding Jenkins repository for APT..."
-    curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+
+  # Remove any old GPG key (optional cleanup)
+  sudo apt-key del 5BA31D57EF5975CA 2>/dev/null || true
+
+  # Download and store the 2023 Jenkins key securely
+  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
     /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+  # Configure the repository with the new signed key
   echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | \
     sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+  # Update after adding repo
+  sudo apt update -y
 fi
 
 # Step 3: Install Java
@@ -46,7 +56,6 @@ if command -v yum &> /dev/null; then
   sudo yum install -y jenkins
 elif command -v apt &> /dev/null; then
   echo "📦 Installing Jenkins..."
-  sudo apt update -y
   sudo apt install -y jenkins
 fi
 
