@@ -142,7 +142,3 @@ DevOps Enthusiast | Cloud Learner\
 
 ---
 
-## 📬 Feedback & Contributions
-
-Feel free to open issues or PRs to improve this project. It’s built for learning, so contributions are always welcome!
-
