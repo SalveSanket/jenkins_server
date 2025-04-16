@@ -27,7 +27,7 @@ It tests usernames (`ubuntu`, `ec2-user`, etc.) to see which one works based on 
 Creates `/home/<user>/Scripts/` on the EC2 instance.
 
 ### 4. **Display Local Files**
-Lists all files inside the local `Scripts/` directory that are ready to be transferred.
+Lists all files inside the local `executable/` directory that are ready to be transferred.
 
 ### 5. **Check Remote Files**
 Checks if the remote `Scripts/` folder is empty.
@@ -49,6 +49,6 @@ Checks if the remote `Scripts/` folder is empty.
 - ✅ Terraform project is initialized and EC2 instance is up
 - ✅ Public IP is available using `terraform output`
 - ✅ SSH key is available at: `~/.ssh/id_rsa`
-- ✅ Your project directory has a folder: `Scripts/` (containing files to deploy)
+- ✅ Your project directory has a folder: `executable/` (containing files to deploy)
 
 ---
