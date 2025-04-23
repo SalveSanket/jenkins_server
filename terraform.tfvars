@@ -6,7 +6,7 @@ public_subnet_cidr = "10.0.1.0/24"
 availability_zone  = "us-east-1a"
 
 # Security group ingress rules
-ssh_ingress_cidr     = "0.0.0.0/0"   # Use your IP in production
+ssh_ingress_cidr     = "0.0.0.0/0" # Use your IP in production
 jenkins_ingress_cidr = "0.0.0.0/0"
 
 # Key pair

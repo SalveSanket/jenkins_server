@@ -25,14 +25,14 @@ output "ssh_connection" {
   description = "SSH command to connect to the EC2 instance"
   value = (
     can(regex("ubuntu", data.aws_ami.Amazon_AMI.name)) ?
-      "ssh -i ~/.ssh/id_rsa ubuntu@${aws_instance.jenkins_server.public_ip}" :
+    "ssh -i ~/.ssh/id_rsa ubuntu@${aws_instance.jenkins_server.public_ip}" :
     can(regex("amzn", data.aws_ami.Amazon_AMI.name)) ?
-      "ssh -i ~/.ssh/id_rsa ec2-user@${aws_instance.jenkins_server.public_ip}" :
+    "ssh -i ~/.ssh/id_rsa ec2-user@${aws_instance.jenkins_server.public_ip}" :
     can(regex("debian", data.aws_ami.Amazon_AMI.name)) ?
-      "ssh -i ~/.ssh/id_rsa admin@${aws_instance.jenkins_server.public_ip}" :
+    "ssh -i ~/.ssh/id_rsa admin@${aws_instance.jenkins_server.public_ip}" :
     can(regex("centos", data.aws_ami.Amazon_AMI.name)) ?
-      "ssh -i ~/.ssh/id_rsa centos@${aws_instance.jenkins_server.public_ip}" :
-      "ssh -i ~/.ssh/id_rsa ec2-user@${aws_instance.jenkins_server.public_ip}"
+    "ssh -i ~/.ssh/id_rsa centos@${aws_instance.jenkins_server.public_ip}" :
+    "ssh -i ~/.ssh/id_rsa ec2-user@${aws_instance.jenkins_server.public_ip}"
   )
 }
 
